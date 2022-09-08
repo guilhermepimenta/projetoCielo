@@ -16,12 +16,12 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>{{ sumary.totalQuantity | number}}</td>
-                        <td>{{ sumary.totalAmount | currency }}</td>
-                        <td>{{ sumary.totalNetAmount | currency }}</td>
-                        <td>{{ sumary.totalAverageAmount | currency }}</td>
-                        <td>{{ sumary.initialDate | date:"dd/MM/yyyy"}}</td>
-                        <td>{{ sumary.finalDate | date:"dd/MM/yyyy"}}</td>            
+                        <td>{{ sumary?.totalQuantity | number}}</td>
+                        <td>{{ sumary?.totalAmount | currency }}</td>
+                        <td>{{ sumary?.totalNetAmount | currency }}</td>
+                        <td>{{ sumary?.totalAverageAmount | currency }}</td>
+                        <td>{{ sumary?.initialDate | date:"dd/MM/yyyy"}}</td>
+                        <td>{{ sumary?.finalDate | date:"dd/MM/yyyy"}}</td>            
                     </tr>
                 </tbody> 
             </table>
