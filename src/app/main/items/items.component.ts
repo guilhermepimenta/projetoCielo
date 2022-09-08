@@ -24,8 +24,7 @@ export class ItemsComponent implements OnInit {
   constructor(private itemsService: ItemsService,
             private paginationService: PaginationService) { }  
 
-  columns = [     
-    'ID do Comerciante',  
+  columns = [          
     'Pagamento',
     'CNPJ',
     'Data',
@@ -36,8 +35,7 @@ export class ItemsComponent implements OnInit {
     'Valor Líquido',    
     'Status'];
     
-  index = [
-    'merchantId',    
+  index = [      
     'paymentNode',
     'cnpjRoot',
     'date',
@@ -68,14 +66,12 @@ export class ItemsComponent implements OnInit {
 
   public firstPage(): void{
     this.isValid = false;
-    this.isDone = false; 
-    this.pagination.firstPage;  
+    this.isDone = false;     
   }
 
   public lastPage(){
     this.isValid = true;
-    this.isDone = true; 
-    this.pagination.lastPage;    
+    this.isDone = true;   
   }
   
 }
