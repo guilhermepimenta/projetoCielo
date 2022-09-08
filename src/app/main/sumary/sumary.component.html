@@ -1,0 +1,35 @@
+<div class="container">
+
+    <div class="summary">
+
+        <h3 class="summary__paragraph">Tabela total de recebimentos</h3>
+    
+        <div class="table-responsive-md text-nowrap">
+
+            <table class="summary__table table table-bordered">
+                <thead>
+                <tr class="table-info">
+                <th scope="col" *ngFor="let col of columns">
+                    {{col}}
+                </th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ sumary.totalQuantity | number}}</td>
+                        <td>{{ sumary.totalAmount | currency }}</td>
+                        <td>{{ sumary.totalNetAmount | currency }}</td>
+                        <td>{{ sumary.totalAverageAmount | currency }}</td>
+                        <td>{{ sumary.initialDate | date:"dd/MM/yyyy"}}</td>
+                        <td>{{ sumary.finalDate | date:"dd/MM/yyyy"}}</td>            
+                    </tr>
+                </tbody> 
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+

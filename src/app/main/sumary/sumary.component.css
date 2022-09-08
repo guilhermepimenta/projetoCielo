@@ -1,0 +1,14 @@
+.summary {
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
+}
+.summary__paragraph{
+    padding-block: 20px;
+    text-align:center;
+    color:green;
+}
+.summary__table {
+    width: 90%;  
+    margin: auto; 
+}
+

@@ -1,0 +1,16 @@
+.items {
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.items__paragraph{
+    padding-block: 20px;
+    text-align:center;
+    color:green;
+}
+.items__table {
+    border-collapse: collapse;
+    width: 100%;    
+    margin: auto; 
+    overflow-y: auto;
+}
+
