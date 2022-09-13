@@ -50,7 +50,7 @@ export class SumaryComponent implements OnInit {
             backgroundColor: '#ff6384'
           },
           {
-            label: "Quantidade Total",
+            label: "Vendas",
             data: ['1546'],
             backgroundColor: '#badce3'
           }  
