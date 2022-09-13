@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PaginationService } from 'src/service/pagination.service';
 import { ItemsService } from './service/items.service';
+import * as FileSaver from 'file-saver';
 
 /**
  * usage
@@ -20,6 +21,7 @@ export class ItemsComponent implements OnInit {
   isValid = true;
   isDone = true;
   pagination: any; 
+  items: any[] = [];
 
   constructor(private itemsService: ItemsService,
             private paginationService: PaginationService) { }  
@@ -47,9 +49,7 @@ export class ItemsComponent implements OnInit {
     'status'
   ];
 
-  items: any;
-
-  public ngOnInit(): void {
+    public ngOnInit(): void {
     this.itemsService.listarItems().subscribe((items) => {
       this.items = items;      
     }, 
@@ -73,6 +73,25 @@ export class ItemsComponent implements OnInit {
     this.isValid = true;
     this.isDone = true;   
   }
+
+  exportExcel() {
+    if (this.items.length > 0) {
+      import("xlsx").then(xlsx => {
+        const worksheet = xlsx.utils.json_to_sheet(this.items);
+        const workbook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
+        const excelBuffer: any = xlsx.write(workbook, { bookType: 'xlsx', type: 'array' });
+        this.saveAsExcelFile(excelBuffer, "ExportExcel");       
+      });
+    }    
+  }
+  saveAsExcelFile(buffer: any, fileName: string): void {   
+    let EXCEL_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
+    let EXCEL_EXTENSION = '.xlsx';
+    const data: Blob = new Blob([buffer], {
+      type: EXCEL_TYPE
+    });
+    FileSaver.saveAs(data, fileName + '_export_' + new Date().getTime() + EXCEL_EXTENSION);    
+  } 
   
 }
 

@@ -10,6 +10,9 @@ import { registerLocaleData } from '@angular/common';
 import { DEFAULT_CURRENCY_CODE } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TableModule } from 'primeng/table';
+import {ChartModule} from 'primeng/chart';
+
 
 registerLocaleData(ptBr);
 
@@ -23,7 +26,9 @@ registerLocaleData(ptBr);
     MainModule,
     HttpClientModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    TableModule,
+    ChartModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt'},
